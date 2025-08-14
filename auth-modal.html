@@ -1,0 +1,218 @@
+<!-- Authentication Modal Templates -->
+<div id="authModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+    <!-- Login Form -->
+    <div id="loginForm" class="bg-white rounded-xl shadow-2xl max-w-md w-full mx-4 transform transition-all">
+        <div class="p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-900">Welcome Back</h2>
+                <button onclick="closeAuthModal()" class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <form id="loginFormElement" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                    <input type="email" id="loginEmail" required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                           placeholder="Enter your email">
+                    <span class="text-red-500 text-sm hidden" id="loginEmailError">Please enter a valid email</span>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                    <div class="relative">
+                        <input type="password" id="loginPassword" required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                               placeholder="Enter your password">
+                        <button type="button" onclick="togglePassword('loginPassword')" 
+                                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <span class="text-red-500 text-sm hidden" id="loginPasswordError">Password is required</span>
+                </div>
+                
+                <div class="flex justify-between items-center">
+                    <label class="flex items-center">
+                        <input type="checkbox" class="rounded border-gray-300 text-purple-600 focus:ring-purple-500">
+                        <span class="ml-2 text-sm text-gray-600">Remember me</span>
+                    </label>
+                    <a href="#" class="text-sm text-purple-600 hover:text-purple-700">Forgot password?</a>
+                </div>
+                
+                <button type="submit" 
+                        class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition duration-300">
+                    Sign In
+                </button>
+                
+                <div class="relative my-4">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-300"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-white text-gray-500">Or continue with</span>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-3">
+                    <button type="button" 
+                            class="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                        <img src="https://www.google.com/favicon.ico" alt="Google" class="w-5 h-5 mr-2">
+                        Google
+                    </button>
+                    <button type="button" 
+                            class="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                        <i class="fab fa-facebook-f text-blue-600 mr-2"></i>
+                        Facebook
+                    </button>
+                </div>
+                
+                <p class="text-center text-sm text-gray-600">
+                    Don't have an account? 
+                    <button type="button" onclick="showSignupForm()" class="text-purple-600 hover:text-purple-700 font-medium">
+                        Sign up here
+                    </button>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Form -->
+    <div id="signupForm" class="bg-white rounded-xl shadow-2xl max-w-md w-full mx-4 transform transition-all hidden">
+        <div class="p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-900">Join The Crib</h2>
+                <button onclick="closeAuthModal()" class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <form id="signupFormElement" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                    <input type="text" id="signupName" required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                           placeholder="Enter your full name">
+                    <span class="text-red-500 text-sm hidden" id="signupNameError">Name is required</span>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                    <input type="email" id="signupEmail" required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                           placeholder="Enter your email">
+                    <span class="text-red-500 text-sm hidden" id="signupEmailError">Please enter a valid email</span>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Username</label>
+                    <input type="text" id="signupUsername" required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                           placeholder="Choose a username">
+                    <span class="text-red-500 text-sm hidden" id="signupUsernameError">Username is required</span>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">I am a</label>
+                    <select id="signupRole" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        <option value="">Select your role</option>
+                        <option value="creative">Creative Professional</option>
+                        <option value="client">Client/Business</option>
+                        <option value="both">Both</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                    <div class="relative">
+                        <input type="password" id="signupPassword" required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                               placeholder="Create a password">
+                        <button type="button" onclick="togglePassword('signupPassword')" 
+                                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="mt-1">
+                        <div class="flex items-center text-xs text-gray-500">
+                            <span id="passwordStrength" class="mr-2">Password strength:</span>
+                            <div class="flex space-x-1">
+                                <div class="w-8 h-1 bg-gray-200 rounded" id="strength1"></div>
+                                <div class="w-8 h-1 bg-gray-200 rounded" id="strength2"></div>
+                                <div class="w-8 h-1 bg-gray-200 rounded" id="strength3"></div>
+                                <div class="w-8 h-1 bg-gray-200 rounded" id="strength4"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="text-red-500 text-sm hidden" id="signupPasswordError">Password must be at least 8 characters</span>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Confirm Password</label>
+                    <div class="relative">
+                        <input type="password" id="signupConfirmPassword" required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                               placeholder="Confirm your password">
+                        <button type="button" onclick="togglePassword('signupConfirmPassword')" 
+                                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <span class="text-red-500 text-sm hidden" id="signupConfirmPasswordError">Passwords do not match</span>
+                </div>
+                
+                <div class="flex items-start">
+                    <input type="checkbox" id="terms" required
+                           class="mt-1 rounded border-gray-300 text-purple-600 focus:ring-purple-500">
+                    <label for="terms" class="ml-2 text-sm text-gray-600">
+                        I agree to the <a href="#" class="text-purple-600 hover:text-purple-700">Terms of Service</a> and <a href="#" class="text-purple-600 hover:text-purple-700">Privacy Policy</a>
+                    </label>
+                </div>
+                
+                <button type="submit" 
+                        class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition duration-300">
+                    Create Account
+                </button>
+                
+                <div class="relative my-4">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-300"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-white text-gray-500">Or sign up with</span>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-3">
+                    <button type="button" 
+                            class="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                        <img src="https://www.google.com/favicon.ico" alt="Google" class="w-5 h-5 mr-2">
+                        Google
+                    </button>
+                    <button type="button" 
+                            class="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                        <i class="fab fa-facebook-f text-blue-600 mr-2"></i>
+                        Facebook
+                    </button>
+                </div>
+                
+                <p class="text-center text-sm text-gray-600">
+                    Already have an account? 
+                    <button type="button" onclick="showLoginForm()" class="text-purple-600 hover:text-purple-700 font-medium">
+                        Sign in here
+                    </button>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Loading Overlay -->
+<div id="loadingOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+    <div class="bg-white p-8 rounded-lg">
+        <div class="spinner mx-auto mb-4"></div>
+        <p class="text-center text-gray-600">Processing...</p>
+    </div>
+</div>
