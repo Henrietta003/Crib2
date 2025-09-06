@@ -61,25 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Enhanced button functionality
-const getStartedBtn = document.getElementById('getStartedBtn');
-getStartedBtn.addEventListener('click', () => {
-    alert('Get Started button clicked!');
-});
 
-// Login button functionality
-const loginBtn = document.getElementById('loginBtn');
-loginBtn.addEventListener('click', () => {
-    alert('Login button clicked!');
-});
 
-// Utility functions
+// check email format
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
 
-function loadCreatives() {
-    // Placeholder function for loading creatives
-    console.log('Loading creatives...');
-}
