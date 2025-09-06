@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crib | Creative Feed</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow px-4 py-3 flex items-center justify-between sticky top-0 z-50">
+    <!-- Logo -->
+    <div class="flex items-center space-x-2">
+      <img src="../assets/img/crib2.png" alt="Crib Logo" class="w-10 h-10">
+      <h1 class="text-xl font-bold text-purple-700">Crib</h1>
+    </div>
+
+
+
+    <!-- User Menu -->
+    <div class="flex items-center space-x-4">
+      <img src="../assets/img/avatar.png" alt="Profile" class="w-10 h-10 rounded-full cursor-pointer">
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 lg:px-8 py-6 flex flex-col lg:flex-row gap-6">
+    
+    <!-- Left Sidebar -->
+    <aside class="hidden lg:block w-1/4 space-y-4">
+      <div class="bg-white rounded-lg shadow p-4">
+        <h2 class="font-bold text-gray-700 mb-3">Navigation</h2>
+        <ul class="space-y-2">
+          <li><a href="#" class="flex items-center space-x-2 text-gray-600 hover:text-purple-600"><i class="fas fa-home"></i><span>Home</span></a></li>
+          <li><a href="#" class="flex items-center space-x-2 text-gray-600 hover:text-purple-600"><i class="fas fa-compass"></i><span>Explore</span></a></li>
+          <li><a href="#" class="flex items-center space-x-2 text-gray-600 hover:text-purple-600"><i class="fas fa-users"></i><span>My Network</span></a></li>
+          <li><a href="#" class="flex items-center space-x-2 text-gray-600 hover:text-purple-600"><i class="fas fa-calendar"></i><span>Events</span></a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Feed Section -->
+    <section class="flex-1 space-y-6">
+      
+      <!-- Post Composer -->
+      <div class="bg-white rounded-lg shadow p-4">
+        <div class="flex items-center space-x-4">
+          <img src="../assets/img/avatar.png" alt="User" class="w-12 h-12 rounded-full">
+          <input type="text" placeholder="Share your latest project, idea, or artwork..." class="flex-1 border rounded-full px-4 py-2 focus:ring-2 focus:ring-purple-500"/>
+        </div>
+        <div class="flex justify-between mt-3 text-gray-500 text-sm">
+          <button class="flex items-center space-x-1 hover:text-purple-600"><i class="fas fa-image"></i><span>Photo</span></button>
+          <button class="flex items-center space-x-1 hover:text-purple-600"><i class="fas fa-video"></i><span>Video</span></button>
+          <button class="flex items-center space-x-1 hover:text-purple-600"><i class="fas fa-link"></i><span>Link</span></button>
+          <button class="flex items-center space-x-1 hover:text-purple-600"><i class="fas fa-music"></i><span>Music</span></button>
+        </div>
+      </div>
+
+      <!-- Example Post -->
+      <div class="bg-white rounded-lg shadow p-4">
+        <div class="flex items-center space-x-3 mb-3">
+          <img src="../assets/img/avatar.png" alt="User" class="w-12 h-12 rounded-full">
+          <div>
+            <h3 class="font-bold text-gray-800">Jane Doe</h3>
+            <p class="text-sm text-gray-500">Digital Artist • 2h ago</p>
+          </div>
+        </div>
+        <p class="text-gray-700 mb-3">
+          Just finished my new digital artwork! 🎨✨ What do you guys think?
+        </p>
+        <img src="../assets/img/artwork-sample.jpg" alt="Artwork" class="w-full rounded-lg mb-3">
+
+        <!-- Actions -->
+        <div class="flex justify-between text-gray-500 text-sm">
+          <button class="flex items-center space-x-1 hover:text-purple-600"><i class="far fa-heart"></i><span>Like</span></button>
+          <button class="flex items-center space-x-1 hover:text-purple-600"><i class="far fa-comment"></i><span>Comment</span></button>
+          <button class="flex items-center space-x-1 hover:text-purple-600"><i class="fas fa-share"></i><span>Share</span></button>
+        </div>
+      </div>
+
+
+
+    </section>
+
+    <!-- Right Sidebar -->
+    <aside class="hidden lg:block w-1/4 space-y-4">
+      <div class="bg-white rounded-lg shadow p-4">
+        <h2 class="font-bold text-gray-700 mb-3">Trending Creatives</h2>
+        <ul class="space-y-3">
+          <li class="flex items-center space-x-3">
+            <img src="../assets/img/avatar3.png" class="w-10 h-10 rounded-full" alt="">
+            <div>
+              <p class="font-semibold text-gray-800">Amina K</p>
+              <span class="text-sm text-gray-500">Fashion Designer</span>
+            </div>
+          </li>
+          <li class="flex items-center space-x-3">
+            <img src="../assets/img/avatar4.png" class="w-10 h-10 rounded-full" alt="">
+            <div>
+              <p class="font-semibold text-gray-800">DJ Wave</p>
+              <span class="text-sm text-gray-500">DJ / Producer</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>
