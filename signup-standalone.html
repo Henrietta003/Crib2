@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crib | Sign In / Sign Up</title>
+  <script src="https://kit.fontawesome.com/a2d04cb4e4.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex flex-col" style="background-color: #FCFDF2;">
+
+  <!-- Top Navbar -->
+  <header class="w-full  shadow-sm sticky top-0 z-50">
+    <div class="px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-center md:justify-start">
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-black tracking-tight">
+        Crib
+      </h1>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-grow flex items-center justify-center p-4">
+    <div class="w-full max-w-6xl bg-white rounded-2xl shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
+
+      <!-- Left Side (Branding / Welcome) -->
+<div class="hidden md:flex flex-col items-center justify-center bg-gradient-to-br from-purple-600 to-purple-800 text-white p-8 lg:p-12">
+    <div class="flex flex-col items-center text-center space-y-3">
+      <!-- Logo -->
+      <img src="assets/img/crib2.png"
+           alt="Crib Logo"
+           class="w-32 sm:w-40 lg:w-56 xl:w-64">
+  
+      <!-- Headline -->
+      <h2 class="text-3xl lg:text-4xl font-extrabold">
+        Welcome to Crib 🎨
+      </h2>
+  
+      <!-- Subtext -->
+      <p class="text-base lg:text-lg text-purple-100 leading-relaxed max-w-sm">
+        The creative network where professionals, clients, and ideas connect.
+      </p>
+    </div>
+  </div>
+  
+
+      <!-- Right Side (Forms) -->
+      <div class="p-6 sm:p-8 lg:p-12">
+        <!-- Tabs -->
+        <div class="flex justify-center mb-6 space-x-4">
+          <button onclick="showLoginForm()" id="loginTab"
+                  class="px-4 sm:px-6 py-2 font-semibold text-purple-700 border-b-4 border-purple-700 text-sm sm:text-base">
+            Sign In
+          </button>
+          <button onclick="showSignupForm()" id="signupTab"
+                  class="px-4 sm:px-6 py-2 font-semibold text-gray-500 border-b-4 border-transparent hover:text-purple-700 text-sm sm:text-base">
+            Sign Up
+          </button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="loginForm" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Email/Username</label>
+            <input type="email" required
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                   placeholder="your@email.com">
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+            <div class="relative">
+              <input type="password" id="loginPassword" required
+                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                     placeholder="••••••••">
+              <button type="button" onclick="togglePassword('loginPassword')" 
+                      class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+            <label class="flex items-center">
+              <input type="checkbox" class="rounded border-gray-300 text-purple-600 focus:ring-purple-500">
+              <span class="ml-2 text-sm text-gray-600">Remember me</span>
+            </label>
+            <a href="#" class="text-sm text-purple-600 hover:text-purple-700">Forgot password?</a>
+          </div>
+
+          <button type="submit" 
+                  class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
+            Sign In
+          </button>
+
+          <div class="relative my-6">
+            <div class="absolute inset-0 flex items-center">
+              <div class="w-full border-t border-gray-300"></div>
+            </div>
+            <div class="relative flex justify-center text-sm">
+              <span class="px-2 bg-white text-gray-500">Or continue with</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <button type="button" class="flex items-center justify-center px-4 py-2 border rounded-lg hover:bg-gray-50">
+              <img src="https://www.google.com/favicon.ico" alt="Google" class="w-5 h-5 mr-2"> Google
+            </button>
+            <button type="button" class="flex items-center justify-center px-4 py-2 border rounded-lg hover:bg-gray-50">
+              <i class="fab fa-facebook-f text-blue-600 mr-2"></i> Facebook
+            </button>
+          </div>
+        </form>
+
+        <!-- Signup Form -->
+        <form id="signupForm" class="space-y-4 hidden">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+            <input type="text" required
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                   placeholder="John Doe">
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+            <input type="email" required
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                   placeholder="your@email.com">
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Username</label>
+            <input type="text" required
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                   placeholder="@creative_handle">
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">I am a</label>
+            <select required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+              <option value="">Select your role</option>
+              <option value="creative">Creative Professional 🎨</option>
+              <option value="client">Client / Business 💼</option>
+              <option value="both">Both 🔗</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+            <div class="relative">
+              <input type="password" id="signupPassword" required
+                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                     placeholder="••••••••">
+              <button type="button" onclick="togglePassword('signupPassword')" 
+                      class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+            <div class="mt-1 flex items-center text-xs text-gray-500">
+              <span id="passwordStrength" class="mr-2">Strength:</span>
+              <div class="flex space-x-1">
+                <div class="w-8 h-1 bg-gray-200 rounded" id="strength1"></div>
+                <div class="w-8 h-1 bg-gray-200 rounded" id="strength2"></div>
+                <div class="w-8 h-1 bg-gray-200 rounded" id="strength3"></div>
+                <div class="w-8 h-1 bg-gray-200 rounded" id="strength4"></div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Confirm Password</label>
+            <div class="relative">
+              <input type="password" id="signupConfirmPassword" required
+                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                     placeholder="Re-enter password">
+              <button type="button" onclick="togglePassword('signupConfirmPassword')" 
+                      class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <input type="checkbox" required
+                   class="mt-1 rounded border-gray-300 text-purple-600 focus:ring-purple-500">
+            <label class="ml-2 text-sm text-gray-600">
+              I agree to the <a href="#" class="text-purple-600 hover:text-purple-700">Terms</a> & <a href="#" class="text-purple-600 hover:text-purple-700">Privacy Policy</a>
+            </label>
+          </div>
+
+          <button type="submit" 
+                  class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
+            Create Account
+          </button>
+
+          <div class="relative my-6">
+            <div class="absolute inset-0 flex items-center">
+              <div class="w-full border-t border-gray-300"></div>
+            </div>
+            <div class="relative flex justify-center text-sm">
+              <span class="px-2 bg-white text-gray-500">Or sign up with</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <button type="button" class="flex items-center justify-center px-4 py-2 border rounded-lg hover:bg-gray-50">
+              <img src="https://www.google.com/favicon.ico" alt="Google" class="w-5 h-5 mr-2"> Google
+            </button>
+            <button type="button" class="flex items-center justify-center px-4 py-2 border rounded-lg hover:bg-gray-50">
+              <i class="fab fa-facebook-f text-blue-600 mr-2"></i> Facebook
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script>
+    function togglePassword(id) {
+      const input = document.getElementById(id);
+      input.type = input.type === "password" ? "text" : "password";
+    }
+
+    function showSignupForm() {
+      document.getElementById("loginForm").classList.add("hidden");
+      document.getElementById("signupForm").classList.remove("hidden");
+      document.getElementById("loginTab").classList.remove("text-purple-700", "border-purple-700");
+      document.getElementById("loginTab").classList.add("text-gray-500", "border-transparent");
+      document.getElementById("signupTab").classList.add("text-purple-700", "border-purple-700");
+      document.getElementById("signupTab").classList.remove("text-gray-500", "border-transparent");
+    }
+
+    function showLoginForm() {
+      document.getElementById("signupForm").classList.add("hidden");
+      document.getElementById("loginForm").classList.remove("hidden");
+      document.getElementById("signupTab").classList.remove("text-purple-700", "border-purple-700");
+      document.getElementById("signupTab").classList.add("text-gray-500", "border-transparent");
+      document.getElementById("loginTab").classList.add("text-purple-700", "border-purple-700");
+      document.getElementById("loginTab").classList.remove("text-gray-500", "border-transparent");
+    }
+
+    // Password strength checker
+    const signupPassword = document.getElementById("signupPassword");
+    if (signupPassword) {
+      signupPassword.addEventListener("input", () => {
+        const val = signupPassword.value;
+        let strength = 0;
+        if (val.length >= 8) strength++;
+        if (/[A-Z]/.test(val)) strength++;
+        if (/[0-9]/.test(val)) strength++;
+        if (/[^A-Za-z0-9]/.test(val)) strength++;
+
+        for (let i = 1; i <= 4; i++) {
+          document.getElementById("strength" + i).classList.remove("bg-green-500", "bg-yellow-400", "bg-red-500");
+          document.getElementById("strength" + i).classList.add("bg-gray-200");
+        }
+
+        for (let i = 1; i <= strength; i++) {
+          document.getElementById("strength" + i).classList.remove("bg-gray-200");
+          if (strength <= 2) {
+            document.getElementById("strength" + i).classList.add("bg-red-500");
+          } else if (strength === 3) {
+            document.getElementById("strength" + i).classList.add("bg-yellow-400");
+          } else {
+            document.getElementById("strength" + i).classList.add("bg-green-500");
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>
