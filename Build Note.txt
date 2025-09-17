@@ -1,0 +1,5 @@
+For mobile nav, make sign in visible without hamburger, then you can put the rest in a hamburger
+for mobile sign up form, it exceeds the screen height but it is not scrollable
+login for mobile nav is not working
+Add images foor creatives and change alts
+ON HOME PAGE, THE FOCUS IS ON SIGN UP AND LOGIN 
