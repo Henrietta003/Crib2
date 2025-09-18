@@ -10,8 +10,17 @@ function setupEventListeners() {
     const loginBtn = document.getElementById('loginBtn');
     if (loginBtn) loginBtn.addEventListener('click', openLoginModal);
 
+    const loginBtn2 = document.getElementById('loginBtn2');
+    if (loginBtn2) loginBtn2.addEventListener('click', openLoginModal);
+
+    const loginBtn3 = document.getElementById('loginBtn3');
+    if (loginBtn3) loginBtn3.addEventListener('click', openLoginModal);
+
     const getStartedBtn = document.getElementById('getStartedBtn');
     if (getStartedBtn) getStartedBtn.addEventListener('click', openSignupModal);
+
+    const getStartedBtn2 = document.getElementById('getStartedBtn2');
+    if (getStartedBtn2) getStartedBtn2.addEventListener('click', openSignupModal);
 
     const closeBtns = document.querySelectorAll('.closeModal');
     closeBtns.forEach(btn => btn.addEventListener('click', closeAuthModal));
