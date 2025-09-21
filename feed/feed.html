@@ -1,233 +1,269 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crib Feed</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Crib</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../css/feed.css">
-  
+ <link rel="stylesheet" href="../css/feed.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+<body class="antialiased text-gray-700">
 
-<body class="bg-gray-50 text-gray-900 font-sans">
+  <!-- TOP NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 bg-white z-50 border-b border-gray-100 h-16">
+    <div class="page-wrap h-full px-4 flex items-center justify-between">
 
-<!-- Navbars -->
-<header class="sticky top-0 z-40">
-  <!-- Top Navbar -->
-  <div class="topnav flex items-center justify-between px-4 py-2">
+      
+      <div class="flex items-center gap-4">
+          <div class="w-50 h-24 flex items-center justify-center">
+            <img src="../assets/img/crib2.png" alt="CRIB Logo" class="w-full h-full object-contain">
+          </div>
 
-    <!-- Logo (desktop only) -->
-    <div class="logo hidden md:flex items-center space-x-2">
-      <img src="../assets/img/crib2.png" alt="Crib Logo" class="w-10 h-10">
+
+        <div class="hidden md:flex">
+          <div class="w-56 search-pill rounded-full px-3 py-1.5 flex items-center gap-2">
+            <i class="fas fa-search text-gray-400 text-sm"></i>
+            <input class="bg-transparent focus:outline-none w-full text-sm" placeholder="Search" />
+          </div>
+        </div>
+      </div>
+
+
+      <nav class="hidden md:flex space-x-6">
+        <div class="flex flex-col items-center cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+          <i class="fas fa-home text-xl gradient-icon"></i>
+          <span class="text-xs font-semibold gradient-icon">Home</span>
+        </div>
+        <div class="flex flex-col items-center cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+          <i class="fas fa-users text-xl gradient-icon"></i>
+          <span class="text-xs font-semibold gradient-icon">Collabo</span>
+        </div>
+        <div class="flex flex-col items-center cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+          <i class="fas fa-globe text-xl gradient-icon"></i>
+          <span class="text-xs font-semibold gradient-icon">Network</span>
+        </div>
+        <div class="flex flex-col items-center cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+          <i class="fas fa-star text-xl gradient-icon"></i>
+          <span class="text-xs font-semibold gradient-icon">Showcase</span>
+        </div>
+        <div class="flex flex-col items-center cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+          <i class="fas fa-store text-xl gradient-icon"></i>
+          <span class="text-xs font-semibold gradient-icon">Home</span>
+        </div>
+        <div class="flex flex-col items-center cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+          <i class="fas fa-play-circle text-xl gradient-icon"></i>
+          <span class="text-xs font-semibold gradient-icon">Media</span>
+        </div>
+      </nav>
+
+
+      <div class="flex items-center gap-4">
+        <div class="relative">
+          <i class="fas fa-bell text-xl text-gray-600 gradient-icon"></i>
+          <span class="absolute -top-1 -right-2 bg-red-500 text-white text-xs px-1.5 rounded-full">3</span>
+        </div>
+
+        <div class="relative">
+          <i class="fas fa-envelope text-xl text-gray-600 gradient-icon"></i>
+          <span class="absolute -top-1 -right-2 bg-red-500 text-white text-xs px-1.5 rounded-full">4</span>
+        </div>
+
+        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-pink-400 to-purple-600 text-white flex items-center justify-center">
+          <i class="fas fa-user text-sm "></i>
+        </div>
+      </div>
     </div>
+  </header>
 
-    <!-- Profile (mobile only, replaces logo) -->
-    <div class="md:hidden flex items-center">
-      <img src="../assets/img/crib.png" alt="Profile" class="w-10 h-10 rounded-full border-2 border-purple-500">
+  <!-- SECOND NAVBAR -->
+  <nav class="secondary-nav">
+    <div class="page-wrap">
+      <div class="inner">
+        <button class="bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-semibold whitespace-nowrap">Live Show</button>
+        <button class="bg-pink-600 text-white px-4 py-1 rounded-full text-sm font-semibold whitespace-nowrap">Virtual Event</button>
+        <button class="bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-semibold whitespace-nowrap">Ticketing</button>
+        <button class="bg-pink-600 text-white px-4 py-1 rounded-full text-sm font-semibold whitespace-nowrap">Workshops</button>
+        <button class="bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-semibold whitespace-nowrap">Networking</button>
+        <button class="bg-pink-600 text-white px-4 py-1 rounded-full text-sm font-semibold whitespace-nowrap">Showcase</button>
+        <div class="w-4 flex-shrink-0"></div>
+      </div>
     </div>
+  </nav>
 
-    <!-- Search -->
-    <div class="search-box flex flex-1 max-w-md mx-6 items-center bg-gray-100 rounded-full px-3">
-      <input type="text" placeholder="Search" class="flex-1 bg-transparent border-none outline-none px-2 py-1">
-      <i class="fas fa-search text-gray-500"></i>
+  <!-- MAIN PAGE -->
+<main class="page-wrap px-4">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+
+<!-- LEFT SIDEBAR -->
+<aside class="sidebar-left hidden md:block md:col-span-3 space-y-5">
+  
+
+  <div class="card rounded-xl overflow-hidden">
+    
+ 
+    <div class="w-full h-20 profile-gradient relative">
+      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=60" 
+           alt="avatar" 
+           class="w-20 h-20 rounded-full border-4 border-white absolute left-4 -bottom-10 object-cover"> 
     </div>
-
-    <!-- Nav Links (desktop only) -->
-    <nav class="icon-nav hidden md:flex gap-6 text-gray-600">
-      <a href="#" class="active flex flex-col items-center text-purple-600">
-        <i class="fas fa-home"></i>
-        <span class="text-xs">Home</span>
-      </a>
-      <a href="#" class="flex flex-col items-center hover:text-purple-600">
-        <i class="fas fa-users"></i>
-        <span class="text-xs">Collaboration</span>
-      </a>
-      <a href="#" class="flex flex-col items-center hover:text-purple-600">
-        <i class="fas fa-calendar-alt"></i>
-        <span class="text-xs">Events</span>
-      </a>
-      <a href="#" class="flex flex-col items-center hover:text-purple-600">
-        <i class="fas fa-calendar-alt"></i>
-        <span class="text-xs">Profile</span>
-      </a>
-    </nav>
-
-    <!-- Right actions -->
-    <div class="actions flex items-center gap-3">
-      <button class="icon-btn md:hidden"><i class="fas fa-search"></i></button>
-      <button class="icon-btn"><i class="fas fa-bell"></i></button>
-      <img src="../assets/img/crib.png" class="w-8 h-8 rounded-full" alt="">
+      <!-- User Info -->
+    <div class="px-4 pt-12 pb-4 text-left">
+      <h3 class="font-semibold text-gray-800">GODWIN DATSOMOR <span class="ml-1">✨</span></h3>
+      <p class="text-sm text-gray-500 mt-1">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore aliqua.
+      </p>
     </div>
   </div>
 
-  <!-- Second Navbar -->
-  <div id="subnav" class="flex gap-6 px-4 py-2 text-sm text-gray-600 border-t">
-    <a href="#" class="hover:text-purple-600">Liveshow</a>
-    <a href="#" class="hover:text-purple-600">Showrooms</a>
-    <a href="#" class="hover:text-purple-600">Tickets</a>
-    <a href="#" class="hover:text-purple-600">Marketplace</a>
+
+  <div class="card rounded-xl overflow-hidden border" style="border-color: var(--crib-purple);"> <!-- ✅ added border -->
+    <div class="grid grid-cols-2  text-sm w-full">
+      <div class="p-3">
+        <div class="text-gray-500">Profile reviews</div>
+        <div class="font-semibold text-pink-600">250k</div>
+      </div>
+      <div class="p-3">
+        <div class="text-gray-500">Post Impressions</div>
+        <div class="font-semibold text-pink-600">250k</div>
+      </div>
+    </div>
   </div>
-</header>
+
+  <!-- CRIB card -->
+  <div class="card rounded-xl p-4 h-60 flex items-center justify-center border" style="border-color: var(--crib-purple);">
+    <img src="https://i.ibb.co/DWv5vYB/crib-logo.png" alt="CRIB logo" class="w-20">
+  </div>
+</aside>
 
 
-  <main class="max-w-7xl mx-auto px-4 py-6 grid grid-cols-1 md:grid-cols-12 gap-6">
-    <!-- Left Sidebar -->
-    <aside class="hidden md:block md:col-span-3 space-y-6">
-      <!-- Profile Card -->
-      <div class="bg-white rounded-xl shadow p-4">
-        <div class="flex items-center space-x-3">
-          <img src="../assets/img/crib.png" class="w-16 h-16 rounded-full border-4 border-purple-500" alt="">
-          <div>
-            <h3 class="font-bold flex items-center">
-              Godwin Datsomor
-              <i class="fas fa-check-circle text-blue-500 ml-1 text-sm"></i>
-            </h3>
-            <p class="text-xs text-gray-500">Motion Artist</p>
-          </div>
-        </div>
-        <p class="mt-3 text-sm text-gray-600">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-      </div>
-
-      <!-- Profile Stats -->
-      <div class="bg-white rounded-xl shadow p-4 flex justify-between text-center text-purple-600">
-        <div>
-          <p class="font-bold">250k</p>
-          <p class="text-xs">Profile Reviews</p>
-        </div>
-        <div>
-          <p class="font-bold">250k</p>
-          <p class="text-xs">Post Impressions</p>
-        </div>
-      </div>
-    </aside>
-
-    <!-- Feed -->
-    <section class="md:col-span-6 space-y-6">
-
-      <!-- Desktop Post Composer -->
-<button class="hidden md:inline-flex openPostModal items-center gap-2 bg-gradient-to-r from-purple-500 
-to-pink-500 text-white px-4 py-2 rounded-full shadow hover:scale-105 transition transform">
-<i class="fas fa-pen"></i>
-<span>Post</span>
-</button>
-
-
-      <!-- Single Post -->
-      <div class="bg-white rounded-xl shadow overflow-hidden">
-        <!-- Post Header -->
-        <div class="flex items-center justify-between px-4 py-3">
-          <div class="flex items-center space-x-2">
-            <img src="../assets/img/crib.png" class="w-10 h-10 rounded-full border-2 border-purple-500" alt="">
-            <div>
-              <h4 class="font-semibold flex items-center">
-                Kelvin Omaboe • 3rd
-                <i class="fas fa-check-circle text-blue-500 ml-1 text-xs"></i>
-              </h4>
-              <p class="text-xs text-gray-500">Student | Fashion Designer | Motion Artist</p>
-              <p class="text-xs text-gray-400">3min ago</p>
+      <!-- MIDDLE FEED -->
+      <section class="md:col-span-6 space-y-6">
+        <article class="card rounded-xl overflow-hidden">
+          <div class="flex items-start gap-3 p-4">
+            <img src="../assets/img/afro culture.png" class="w-12 h-12 rounded-full object-cover" alt="author">
+            <div class="flex-1">
+              <div class="flex items-center gap-2">
+                <div>
+                  <div class="font-semibold">Kelvin Omaboe <span class="text-gray-400 text-sm">· 3rd</span></div>
+                  <div class="text-xs text-gray-400">Student | Fashion designer | Motion Artist</div>
+                </div>
+                <div class="ml-auto text-right">
+                  <div class="text-xs text-gray-400">3min · Just posted</div>
+                </div>
+              </div>
             </div>
+            <button class="text-crib-purple ml-2 text-sm font-semibold" style="color: var(--crib-purple)">+ Follow</button>
           </div>
-          <button class="text-purple-600 font-medium">+ Follow</button>
-        </div>
 
-        <!-- Post Image -->
-        <img src="../assets/img/crib.png" alt="Post" class="w-full h-64 object-cover">
+          <div class="w-full h-64 md:h-80 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1400&q=80" alt="post image" class="w-full h-full object-cover post-img">
+          </div>
 
-        <!-- Post Body -->
-        <div class="p-4 space-y-3">
-          <div class="flex">
-            <div class="flex-1 pr-4">
-              <p class="text-sm text-gray-700">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
-              </p>
+          <div class="p-4">
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+            </p>
+
+            <div class="mt-4 flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <button class="flex items-center gap-2 px-3 py-1 rounded-full bubble text-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/>
+                  </svg>
+                  <span class="text-sm font-medium text-gray-700">13k</span>
+                </button>
+
+                
+                <button class="flex items-center gap-2 px-3 py-1 rounded-full text-sm text-gray-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                  </svg>
+                  <span class="text-sm">13k</span>
+                </button>
+              </div>
+
+              <div class="flex items-center gap-3 text-gray-500">
+                <div class="text-xs">13k</div>
+                <button class="text-xs">🔖</button>
+              </div>
             </div>
 
-            <div class="flex flex-col items-center justify-center space-y-4 text-sm text-gray-600">
-              <span class="flex flex-col items-center">
-                <i class="fas fa-heart text-red-500"></i>
-                <span>13k</span>
-              </span>
-              <span class="flex flex-col items-center">
-                <i class="fas fa-comment text-gray-500"></i>
-                <span>13k</span>
-              </span>
-              <span class="flex flex-col items-center">
-                <i class="fas fa-bookmark text-purple-500"></i>
-                <span>13k</span>
-              </span>
+            <div class="mt-4 border-t pt-3 flex justify-around text-sm action-row">
+    
+              <button class="flex items-center gap-2 text-purple-700 font-medium">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/>
+                </svg>
+                <span>Admire</span>
+              </button>
+
+              
+              <button class="flex items-center gap-2 text-gray-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+                <span>Critique</span>
+              </button>
+
+              
+              <button class="flex items-center gap-2 text-gray-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 2L11 13" />
+                  <path d="M22 2l-7 20-4-9-9-4 20-7z" />
+                </svg>
+                <span>Share</span>
+              </button>
             </div>
           </div>
+        </article>
+        <div class="h-96"></div>
+      </section>
 
-          <div class="flex justify-around border-t pt-3">
-            <button class="flex items-center space-x-1 text-purple-600">
-              <i class="fas fa-thumbs-up"></i><span>Admire</span>
-            </button>
-            <button class="flex items-center space-x-1 text-pink-600">
-              <i class="fas fa-comment-dots"></i><span>Critique</span>
-            </button>
-            <button class="flex items-center space-x-1 text-blue-600">
-              <i class="fas fa-share"></i><span>Share</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
+      <!-- RIGHT SIDEBAR -->
+<aside class="sidebar-right hidden md:block md:col-span-3 space-y-5">
 
-    <!-- Right Sidebar -->
-    <aside class="hidden lg:block lg:col-span-3 space-y-6">
-      <div class="relative  bg-white rounded-xl shadow overflow-hidden">
-        
-        <!-- Legend styled like a tag -->
-        <legend class="absolute top-3 left-3 px-3 py-1 text-white text-sm font-semibold rounded-full bg-gradient-to-r from-purple-500 to-pink-500 shadow-md">
-          Trending Events
-        </legend>
+  <!-- Trending Events Card -->
+  <div class="card rounded-xl overflow-hidden p-0"> 
     
-        <!-- Event image fills container -->
-        <img src="../assets/img/crib.png" alt="Event" class="w-full h-56 object-cover">
-    
-        <!-- CTA button -->
-        <div class="p-4">
-          <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium py-2 rounded-lg hover:opacity-90 transition">
-            Purchase ticket
-          </button>
-        </div>
-      </div>
-    </aside>
-    
+    <!-- Banner Image -->
+    <div class="relative">
+      <img src="../assets/img/afro culture.png" alt="Trending Event" class="w-full h-48 object-cover"> <!-- ✅ event banner image -->
+
+      <!-- Trending Label -->
+      <span class="absolute top-2 left-2 bg-purple-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+        Trending Events
+      </span>
+    </div>
+
+    <!-- Purchase Button -->
+    <div class="p-3">
+      <button class="w-full py-2 rounded-md font-semibold text-white"
+        style="background: var(--crib-gradient);">
+        Purchase a ticket
+      </button>
+    </div>
+  </div>
+
+  <!-- Add To Your Feed Card -->
+  <div class="card rounded-xl p-4 h-60 border-2 border-dashed flex items-center justify-center text-gray-500 text-sm"
+       style="border-color: var(--crib-purple);"> 
+    Add To Your Feed
+  </div>
+</aside>
+
+
+    </div>
   </main>
 
-  <!-- Post Modal -->
-<div id="postModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-  <div class="bg-white rounded-xl w-11/12 md:w-1/2 p-6 relative">
-    <button id="closeModal" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800">
-      <i class="fas fa-times"></i>
-    </button>
-    <h2 class="text-xl font-semibold mb-4">Create Post</h2>
-
-    <textarea id="postContent" rows="5"
-      class="w-full border rounded-lg p-3 text-sm mb-4 focus:outline-none focus:ring-2 focus:ring-purple-500"
-      placeholder="What's on your mind?"></textarea>
-
-    <input type="file" id="postImage" class="mb-4 w-full">
-
-    <button id="submitPost"
-      class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 rounded-lg hover:opacity-90 transition">
-      Post
-    </button>
+  <!-- MOBILE FLOATING PLUS BUTTON -->
+  <div class="md:hidden fixed bottom-6 left-1/2 transform -translate-x-1/2">
+    <button class="floating-post w-16 h-16 rounded-full flex items-center justify-center text-white text-3xl">+</button>
   </div>
-</div>
 
+  <div class="md:hidden h-20"></div>
 
-  <!-- Floating Post Button (Mobile only) -->
-  <button
-    class="md:hidden openPostModal fixed bottom-6 right-6 bg-gradient-to-r from-purple-500 to-pink-500 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition transform">
-    <i class="fas fa-plus text-2xl"></i>
-  </button>
-
-  <script src="../scripts/post.js"></script>
 </body>
 </html>
